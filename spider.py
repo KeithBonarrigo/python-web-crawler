@@ -20,7 +20,7 @@ class Spider:
         Spider.domain_name = domain_name
         Spider.queue_file = Spider.project_name + '/queue.txt'
         Spider.crawled_file = Spider.project_name + '/crawled.txt'
-        self.boot()
+        self.boot(self)
         self.crawl_page('First Spider', Spider.base_url)
 
     @staticmethod
@@ -59,7 +59,7 @@ class Spider:
     @staticmethod
     def add_links_to_queue(links):
         for url in links:
-            if (url in Spider.queue) or (url in Spider.crawled)
+            if (url in Spider.queue) or (url in Spider.crawled):
                 continue
             if Spider.domain_name != get_domain_name(url):
                 continue
